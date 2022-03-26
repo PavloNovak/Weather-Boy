@@ -19,7 +19,7 @@ enum MetaWeather {
 extension MetaWeather: APIService {
     
     var baseURL: String {
-        "https://www.metaweather.com/api/location/"
+        return "https://www.metaweather.com/api/location/"
     }
     
     var path: String {
@@ -37,5 +37,9 @@ extension MetaWeather: APIService {
         case .berlin:
             return "638242"
         }
+    }
+    
+    var parameters: String {
+        return ""
     }
 }

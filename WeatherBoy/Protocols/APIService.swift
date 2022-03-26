@@ -15,9 +15,9 @@ protocol APIService {
 }
 
 extension APIService {
-    /// Full URL request
-    var request: URL? {
-        URL(string: constructRequest())
+    /// Full request string
+    var requestString: String {
+        constructRequest()
     }
 
     private func constructRequest() -> String {
