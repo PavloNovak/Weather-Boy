@@ -96,10 +96,14 @@
 			isa = PBXGroup;
 			children = (
 				4E0C8E3427EEEF1C00C2A537 /* AppDelegate.swift */,
-				4E0C8E3827EEEF1C00C2A537 /* ViewController.swift */,
-				4E0C8E3D27EEEF1E00C2A537 /* Assets.xcassets */,
-				4E0C8E3F27EEEF1E00C2A537 /* LaunchScreen.storyboard */,
-				4E0C8E4227EEEF1E00C2A537 /* Info.plist */,
+				4E0C8E6D27EEF32700C2A537 /* Protocols */,
+				4E0C8E6B27EEF30A00C2A537 /* Networking */,
+				4E0C8E6927EEF2F800C2A537 /* Models */,
+				4E0C8E6F27EEF36900C2A537 /* View models */,
+				4E0C8E6A27EEF30100C2A537 /* Views */,
+				4E0C8E6527EEF23B00C2A537 /* View controllers */,
+				4E0C8E6E27EEF32D00C2A537 /* Extensions */,
+				4E0C8E6427EEF22900C2A537 /* Supporting files */,
 			);
 			path = WeatherBoy;
 			sourceTree = "<group>";
@@ -119,6 +123,66 @@
 				4E0C8E5727EEEF1E00C2A537 /* WeatherBoyUITestsLaunchTests.swift */,
 			);
 			path = WeatherBoyUITests;
+			sourceTree = "<group>";
+		};
+		4E0C8E6427EEF22900C2A537 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				4E0C8E3D27EEEF1E00C2A537 /* Assets.xcassets */,
+				4E0C8E3F27EEEF1E00C2A537 /* LaunchScreen.storyboard */,
+				4E0C8E4227EEEF1E00C2A537 /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		4E0C8E6527EEF23B00C2A537 /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4E0C8E3827EEEF1C00C2A537 /* ViewController.swift */,
+			);
+			path = "View controllers";
+			sourceTree = "<group>";
+		};
+		4E0C8E6927EEF2F800C2A537 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4E0C8E6A27EEF30100C2A537 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4E0C8E6B27EEF30A00C2A537 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		4E0C8E6D27EEF32700C2A537 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4E0C8E6E27EEF32D00C2A537 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4E0C8E6F27EEF36900C2A537 /* View models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
