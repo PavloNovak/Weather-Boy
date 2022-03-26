@@ -1,14 +1,15 @@
 //
-//  WeatherBoyTests.swift
+//  APIManagerTests.swift
 //  WeatherBoyTests
 //
 //  Created by Pavlo Novak on 2022-03-26.
 //
 
+import Foundation
 import XCTest
 @testable import WeatherBoy
 
-class WeatherBoyTests: XCTestCase {
+class APIManagerTests: XCTestCase {
     
     var urlSession: URLSession!
     
@@ -18,7 +19,20 @@ class WeatherBoyTests: XCTestCase {
         urlSession = URLSession(configuration: configuration)
     }
     
-    func testRequest() throws {
+    func testRequestBuilding() {
+        // Arrange
+        let expectedResult = URL(string: "https://www.metaweather.com/api/location/2455920")
+        
+        // Act
+        let request = MetaWeather.mountainView.requestString
+        let requestURL = URL(string: request)
+        
+        // Assert
+        XCTAssertNotNil(requestURL)
+        XCTAssertEqual(expectedResult, requestURL)
+    }
+    
+    func testRequest() {
         // Arrange
         let apiManager = APIManager(urlSession: urlSession)
         
@@ -35,19 +49,6 @@ class WeatherBoyTests: XCTestCase {
             }
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 2)
-    }
-
-    func testRequestBuilding() {
-        // Arrange
-        let expectedResult = URL(string: "https://www.metaweather.com/api/location/2455920")
-        
-        // Act
-        let request = MetaWeather.mountainView.requestString
-        let requestURL = URL(string: request)
-        
-        // Assert
-        XCTAssertNotNil(requestURL)
-        XCTAssertEqual(expectedResult, requestURL)
+        wait(for: [expectation], timeout: 3)
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MetaWeather {
+enum MetaWeather: CaseIterable {
     case gothenburg
     case stockholm
     case mountainView
