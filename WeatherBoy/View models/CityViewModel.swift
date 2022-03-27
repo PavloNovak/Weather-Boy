@@ -5,7 +5,7 @@
 //  Created by Pavlo Novak on 2022-03-26.
 //
 
-import Foundation
+import UIKit
 
 final class CityViewModel {
     
@@ -34,6 +34,19 @@ final class CityViewModel {
             }
         }
     }
+    
+    public func fetchImageByWeatherStateCode(_ code: String, completion: @escaping ((UIImage) -> Void)) {
+        apiManager.fetchImageByURL(from: MetaWeatherState.image,
+                                   weatherState: code) { result in
+            switch result {
+            case .success(let image):
+                completion(image)
+            case .failure(_):
+                break
+            }
+        }
+    }
+
 }
 
 extension CityViewModel: CityViewModelRepresentable {

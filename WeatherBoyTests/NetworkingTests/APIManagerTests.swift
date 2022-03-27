@@ -32,7 +32,7 @@ class APIManagerTests: XCTestCase {
         XCTAssertEqual(expectedResult, requestURL)
     }
     
-    func testRequest() {
+    func testDataRequest() {
         // Arrange
         let apiManager = APIManager(urlSession: urlSession)
         
@@ -43,6 +43,27 @@ class APIManagerTests: XCTestCase {
             switch result {
             case .success(let city):
                 XCTAssertFalse(city.weather.isEmpty)
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            
+            }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 3)
+    }
+    
+    func testImageRequest() {
+        // Arrange
+        let apiManager = APIManager(urlSession: urlSession)
+        
+        let expectation = XCTestExpectation(description: "response")
+        
+        // Act & Assert
+        apiManager.fetchImageByURL(from: MetaWeatherState.image,
+                                   weatherState: "sn") { result in
+            switch result {
+            case .success(_):
+                break
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             
