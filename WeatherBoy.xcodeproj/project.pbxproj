@@ -31,6 +31,9 @@
 		4E98C87A27EFAA210022E44E /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E98C87927EFAA210022E44E /* WeatherDetailsViewController.swift */; };
 		4E98C87C27F040900022E44E /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E98C87B27F040900022E44E /* ApplicationController.swift */; };
 		4E98C87F27F049F70022E44E /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E98C87E27F049F70022E44E /* CityCell.swift */; };
+		4E98C88127F063110022E44E /* WeatherDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E98C88027F063110022E44E /* WeatherDetailsView.swift */; };
+		4E98C88327F079360022E44E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E98C88227F079360022E44E /* StringExtension.swift */; };
+		4E98C88627F079800022E44E /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E98C88527F079800022E44E /* StringTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,8 @@
 		4E98C87927EFAA210022E44E /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		4E98C87B27F040900022E44E /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
 		4E98C87E27F049F70022E44E /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		4E98C88227F079360022E44E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		4E98C88527F079800022E44E /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +153,7 @@
 				4E98C86727EF080D0022E44E /* NetworkingTests */,
 				4E0C8E7927EEF82100C2A537 /* ModelTests */,
 				4E98C87827EFA2340022E44E /* ViewModelTests */,
+				4E98C88427F079630022E44E /* ExtensionsTests */,
 			);
 			path = WeatherBoyTests;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 		4E0C8E6E27EEF32D00C2A537 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4E98C88227F079360022E44E /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
