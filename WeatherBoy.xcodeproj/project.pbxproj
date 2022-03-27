@@ -81,6 +81,7 @@
 		4E98C87927EFAA210022E44E /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		4E98C87B27F040900022E44E /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
 		4E98C87E27F049F70022E44E /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		4E98C88027F063110022E44E /* WeatherDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsView.swift; sourceTree = "<group>"; };
 		4E98C88227F079360022E44E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		4E98C88527F079800022E44E /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				4E98C87D27F049E20022E44E /* Cells */,
+				4E98C88027F063110022E44E /* WeatherDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -428,6 +430,7 @@
 				4E98C87127EF9B520022E44E /* CityViewModelDelegate.swift in Sources */,
 				4E98C87F27F049F70022E44E /* CityCell.swift in Sources */,
 				4E98C86927EF0C780022E44E /* APIManager.swift in Sources */,
+				4E98C88127F063110022E44E /* WeatherDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

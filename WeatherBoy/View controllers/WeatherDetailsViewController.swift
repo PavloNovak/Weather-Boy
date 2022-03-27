@@ -13,6 +13,13 @@ class WeatherDetailsViewController: UIViewController {
     private let cityIndex: Int
     private let viewModel: CityViewModel = CityViewModel()
     
+    private lazy var weatherDetailsView: WeatherDetailsView = {
+        let view = WeatherDetailsView(with: viewModel)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.style = .large
@@ -56,7 +63,7 @@ class WeatherDetailsViewController: UIViewController {
 extension WeatherDetailsViewController: CityViewModelDelegate {
     func didUpdateData() {
         activityIndicator.stopAnimating()
-        // TODO: - Update screen
+        weatherDetailsView.updateViews()
     }
     
     func didOccurError(withMessage message: String) {
