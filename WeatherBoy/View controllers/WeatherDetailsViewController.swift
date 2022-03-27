@@ -72,12 +72,27 @@ class WeatherDetailsViewController: UIViewController {
 
 extension WeatherDetailsViewController: CityViewModelDelegate {
     func didUpdateData() {
-        activityIndicator.stopAnimating()
-        weatherDetailsView.updateViews()
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+            self.weatherDetailsView.updateViews()
+        }
     }
     
     func didOccurError(withMessage message: String) {
-        activityIndicator.stopAnimating()
-        // TODO: - Show alert with retry option
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+                self?.navigationController?.popViewController(animated: true)
+            })
+            let tryAgainAction = UIAlertAction(title: "Try again", style: .cancel, handler: { [weak self] _ in
+                guard let self = self else { return }
+                self.viewModel.fetchCityDataByIndex(self.cityIndex)
+            })
+            
+            self.presentAlert(title: "Unfortunately, we were unable to load weather forecast",
+                              message: "Please, try again or come back later",
+                              actions: [okAction, tryAgainAction])
+        }
     }
 }
