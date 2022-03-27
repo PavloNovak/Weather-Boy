@@ -20,7 +20,7 @@ final class WeatherDetailsView: UIStackView {
     
     private lazy var temperatureLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 32, weight: .bold)
+        label.font = .systemFont(ofSize: 48, weight: .semibold)
         label.numberOfLines = 1
         label.textAlignment = .natural
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -31,6 +31,7 @@ final class WeatherDetailsView: UIStackView {
     private lazy var weatherStateStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.alignment = .center
+        stackView.spacing = 8
         stackView.axis = .horizontal
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -39,7 +40,7 @@ final class WeatherDetailsView: UIStackView {
     
     private lazy var weatherStateLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.numberOfLines = 1
         label.textAlignment = .natural
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -49,7 +50,7 @@ final class WeatherDetailsView: UIStackView {
     
     private lazy var lowTemperatureLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.numberOfLines = 1
         label.textAlignment = .natural
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -59,7 +60,7 @@ final class WeatherDetailsView: UIStackView {
     
     private lazy var highTemperatureLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.numberOfLines = 1
         label.textAlignment = .natural
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -70,6 +71,7 @@ final class WeatherDetailsView: UIStackView {
     private lazy var temperatureLabelsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.alignment = .center
+        stackView.spacing = 8
         stackView.axis = .horizontal
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -78,7 +80,7 @@ final class WeatherDetailsView: UIStackView {
     
     private lazy var sunriseLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.numberOfLines = 1
         label.textAlignment = .natural
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -88,7 +90,7 @@ final class WeatherDetailsView: UIStackView {
     
     private lazy var sunsetLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.numberOfLines = 1
         label.textAlignment = .natural
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -107,7 +109,7 @@ final class WeatherDetailsView: UIStackView {
     
     private lazy var localTimeLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.numberOfLines = 1
         label.textAlignment = .natural
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -150,8 +152,29 @@ final class WeatherDetailsView: UIStackView {
         
         localTimeLabel.text = "Local time: \(viewModel.localTime.formatToClockString(with: viewModel.timezone))"
     }
-    
+}
+
+extension WeatherDetailsView {
     private func setupViews() {
+        weatherStateStackView.addArrangedSubview(weatherImageView)
+        weatherStateStackView.addArrangedSubview(temperatureLabel)
+        addArrangedSubview(weatherStateStackView)
         
+        addArrangedSubview(weatherStateLabel)
+        
+        temperatureLabelsStackView.addArrangedSubview(lowTemperatureLabel)
+        temperatureLabelsStackView.addArrangedSubview(highTemperatureLabel)
+        addArrangedSubview(temperatureLabelsStackView)
+        
+        sunPositionLabelsStackView.addArrangedSubview(sunriseLabel)
+        sunPositionLabelsStackView.addArrangedSubview(sunsetLabel)
+        addArrangedSubview(temperatureLabelsStackView)
+        
+        addArrangedSubview(localTimeLabel)
+        
+        NSLayoutConstraint.activate([
+            weatherImageView.heightAnchor.constraint(equalToConstant: 64),
+            weatherImageView.widthAnchor.constraint(equalTo: weatherImageView.heightAnchor)
+        ])
     }
 }

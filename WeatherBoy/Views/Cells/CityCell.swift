@@ -91,7 +91,7 @@ final class CityCell: UITableViewCell {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
-        setGradientColor()
+        gradientLayer.setGradientColor(for: traitCollection)
     }
     
     func setup(for cityIndex: Int) {
@@ -126,21 +126,7 @@ final class CityCell: UITableViewCell {
     }
     
     private func applyGradient() {
-        setGradientColor()
+        gradientLayer.setGradientColor(for: traitCollection)
         containerView.layer.insertSublayer(gradientLayer, at: 0)
-    }
-    
-    private func setGradientColor() {
-        if traitCollection.userInterfaceStyle == .dark {
-            let color = UIColor.black
-            gradientLayer.colors = [color.withAlphaComponent(0).cgColor,
-                                    color.withAlphaComponent(0.3).cgColor,
-                                    color.withAlphaComponent(0.5).cgColor]
-        } else {
-            let color = UIColor.white
-            gradientLayer.colors = [color.withAlphaComponent(0).cgColor,
-                                    color.withAlphaComponent(0.3).cgColor,
-                                    color.withAlphaComponent(0.5).cgColor]
-        }
     }
 }

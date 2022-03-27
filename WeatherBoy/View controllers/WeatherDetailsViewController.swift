@@ -14,10 +14,13 @@ class WeatherDetailsViewController: UIViewController {
     private let viewModel: CityViewModel = CityViewModel()
     
     private lazy var weatherDetailsView: WeatherDetailsView = {
-        let view = WeatherDetailsView(with: viewModel)
-        view.translatesAutoresizingMaskIntoConstraints = false
+        let weatherView = WeatherDetailsView(with: viewModel)
+        weatherView.axis = .vertical
+        weatherView.alignment = .center
+        weatherView.spacing = 16
+        weatherView.translatesAutoresizingMaskIntoConstraints = false
         
-        return view
+        return weatherView
     }()
     
     private lazy var activityIndicator: UIActivityIndicatorView = {
@@ -40,6 +43,7 @@ class WeatherDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .systemBackground
         navigationItem.title = MetaWeather.allCases[cityIndex].rawValue
         
         viewModel.delegate = self
@@ -52,10 +56,16 @@ class WeatherDetailsViewController: UIViewController {
     
     private func setupViews() {
         view.addSubview(activityIndicator)
+        view.addSubview(weatherDetailsView)
         
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            weatherDetailsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            weatherDetailsView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+                                                    constant: 32),
+            weatherDetailsView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
 }
