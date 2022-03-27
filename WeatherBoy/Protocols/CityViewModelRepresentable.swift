@@ -18,4 +18,6 @@ protocol CityViewModelRepresentable: AnyObject {
     var sunRise: String { get }
     /// Returns sunset local time for a city
     var sunSet: String { get }
+    /// Returns local timezone identifier
+    var timezone: String { get }
 }

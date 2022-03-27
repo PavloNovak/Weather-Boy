@@ -56,4 +56,8 @@ extension CityViewModel: CityViewModelRepresentable {
     var sunSet: String {
         return model?.sunSet ?? ""
     }
+    
+    var timezone: String {
+        return model?.timeZoneIdentifier ?? ""
+    }
 }

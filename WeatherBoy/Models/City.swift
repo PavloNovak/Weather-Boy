@@ -13,6 +13,7 @@ struct City: Decodable {
     let localTime: String
     let sunRise: String
     let sunSet: String
+    let timeZoneIdentifier: String
 
     enum CodingKeys: String, CodingKey {
         case title
@@ -20,6 +21,7 @@ struct City: Decodable {
         case localTime = "time"
         case sunRise = "sun_rise"
         case sunSet = "sun_set"
+        case timeZoneIdentifier = "timezone"
     }
 }
 
@@ -30,5 +32,6 @@ extension City: Equatable {
         && lhs.sunRise == rhs.sunRise
         && lhs.sunSet == rhs.sunSet
         && lhs.weather == rhs.weather
+        && lhs.timeZoneIdentifier == rhs.timeZoneIdentifier
     }
 }
