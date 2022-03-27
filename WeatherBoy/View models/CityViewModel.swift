@@ -5,7 +5,7 @@
 //  Created by Pavlo Novak on 2022-03-26.
 //
 
-import UIKit
+import Foundation
 
 final class CityViewModel {
     
@@ -34,18 +34,6 @@ final class CityViewModel {
             }
         }
     }
-    
-    public func fetchImageByWeatherStateCode(_ code: String, completion: @escaping ((UIImage) -> Void)) {
-        apiManager.fetchImageByURL(from: MetaWeatherState.image,
-                                   weatherState: code) { result in
-            switch result {
-            case .success(let image):
-                completion(image)
-            case .failure(_):
-                break
-            }
-        }
-    }
 }
 
 extension CityViewModel: CityViewModelRepresentable {
@@ -53,9 +41,12 @@ extension CityViewModel: CityViewModelRepresentable {
         return model?.title ?? ""
     }
     
-    var weather: Weather? {
-        guard let weatherModel = model?.weather, weatherModel.count > 1 else { return nil }
-        return weatherModel[1]
+    var weather: [Weather] {
+        return model?.weather ?? []
+    }
+    
+    var localTime: String {
+        return model?.localTime ?? ""
     }
     
     var sunRise: String {

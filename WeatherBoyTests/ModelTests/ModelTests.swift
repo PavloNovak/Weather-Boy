@@ -24,6 +24,7 @@ class ModelTests: XCTestCase {
                                                   currentTemperature: 20.48)]
         let expectedResult = City(title: "Mountain View",
                                   weather: expectedWeather,
+                                  localTime: "2022-03-26T00:16:48.696329-07:00",
                                   sunRise: "2022-03-26T07:02:36.211117-07:00",
                                   sunSet: "2022-03-26T19:24:54.135109-07:00")
         
