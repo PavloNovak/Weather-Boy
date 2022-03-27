@@ -13,6 +13,14 @@ class WeatherDetailsViewController: UIViewController {
     private let cityIndex: Int
     private let viewModel: CityViewModel = CityViewModel()
     
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.style = .large
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        return activityIndicator
+    }()
+    
     init(with cityIndex: Int) {
         self.cityIndex = cityIndex
         super.init(nibName: nil, bundle: nil)
@@ -29,19 +37,30 @@ class WeatherDetailsViewController: UIViewController {
         
         viewModel.delegate = self
         
-        // TODO: - Show loader
+        activityIndicator.startAnimating()
         viewModel.fetchCityDataByIndex(cityIndex)
+        
+        setupViews()
+    }
+    
+    private func setupViews() {
+        view.addSubview(activityIndicator)
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
 }
 
 extension WeatherDetailsViewController: CityViewModelDelegate {
     func didUpdateData() {
-        // TODO: - Stop loader
+        activityIndicator.stopAnimating()
         // TODO: - Update screen
     }
     
     func didOccurError(withMessage message: String) {
-        // TODO: - Stop loader
+        activityIndicator.stopAnimating()
         // TODO: - Show alert with retry option
     }
 }

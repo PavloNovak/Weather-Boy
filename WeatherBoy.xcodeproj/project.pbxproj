@@ -273,6 +273,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		4E98C88427F079630022E44E /* ExtensionsTests */ = {
+			isa = PBXGroup;
+			children = (
+				4E98C88527F079800022E44E /* StringTests.swift */,
+			);
+			path = ExtensionsTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -409,6 +417,7 @@
 				4E0C8E7427EEF7A400C2A537 /* Weather.swift in Sources */,
 				4E98C86D27EF99500022E44E /* MetaWeatherState.swift in Sources */,
 				4E98C86627EF069C0022E44E /* MetaWeather.swift in Sources */,
+				4E98C88327F079360022E44E /* StringExtension.swift in Sources */,
 				4E98C87327EF9CE70022E44E /* CityViewModelRepresentable.swift in Sources */,
 				4E98C86427EF05730022E44E /* APIService.swift in Sources */,
 				4E98C87C27F040900022E44E /* ApplicationController.swift in Sources */,
@@ -427,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E0C8E7B27EEF83B00C2A537 /* ModelTests.swift in Sources */,
+				4E98C88627F079800022E44E /* StringTests.swift in Sources */,
 				4E98C86B27EF182C0022E44E /* DummyURLProtocol.swift in Sources */,
 				4E98C87527EFA14C0022E44E /* CityViewModelTests.swift in Sources */,
 				4E98C87727EFA2080022E44E /* APIManagerTests.swift in Sources */,
