@@ -13,7 +13,6 @@ final class ApplicationController {
     
     init(with rootViewController: UINavigationController) {
         self.rootViewController = rootViewController
-        self.rootViewController.navigationItem.title = "Weather"
     }
     
     func setup() {

@@ -43,3 +43,18 @@ extension MetaWeather: APIService {
         return ""
     }
 }
+
+extension MetaWeather {
+    func country() -> String {
+        switch self {
+        case .gothenburg, .stockholm:
+            return "Sweden"
+        case .mountainView, .newYork:
+            return "United States"
+        case .london:
+            return "England"
+        case .berlin:
+            return "Germany"
+        }
+    }
+}
