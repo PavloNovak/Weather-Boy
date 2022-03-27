@@ -41,7 +41,14 @@ class CityViewModelTests: XCTestCase {
                                                   date: "2022-03-26",
                                                   minTemperature: 8.19,
                                                   maxTemperature: 21.605,
-                                                  currentTemperature: 20.48)]
+                                                  currentTemperature: 20.48),
+                                          Weather(id: 1337,
+                                                  weatherState: "Cloud",
+                                                  weatherStateCode: "c",
+                                                  date: "2022-03-27",
+                                                  minTemperature: 8.0,
+                                                  maxTemperature: 20.0,
+                                                  currentTemperature: 19.0)]
         let expectedResult = City(title: "Mountain View",
                                   weather: expectedWeather,
                                   localTime: "2022-03-26T00:16:48.696329-07:00",
@@ -57,6 +64,7 @@ class CityViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.sunRise, expectedResult.sunRise)
         XCTAssertEqual(viewModel.sunSet, expectedResult.sunSet)
         XCTAssertEqual(viewModel.timezone, expectedResult.timeZoneIdentifier)
+        XCTAssertEqual(viewModel.weatherForTomorrow, expectedResult.weather[1])
     }
 }
 

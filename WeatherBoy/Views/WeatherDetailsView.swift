@@ -130,10 +130,8 @@ final class WeatherDetailsView: UIStackView {
     }
     
     public func updateViews() {
-        let weatherArray = viewModel.weather
-        // Getting tomorrow's weather
-        guard weatherArray.count > 1 else { return }
-        let weather = weatherArray[1]
+        let weather = viewModel.weatherForTomorrow
+        guard let weather = weather else { return }
         temperatureLabel.text = "\(Int(weather.currentTemperature))°"
         viewModel.fetchImageByWeatherStateCode(weather.weatherStateCode,
                                                completion: { [weak self] image in

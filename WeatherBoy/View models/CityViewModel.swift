@@ -80,3 +80,11 @@ extension CityViewModel: CityViewModelRepresentable {
         return model?.timeZoneIdentifier ?? ""
     }
 }
+
+extension CityViewModel {
+    var weatherForTomorrow: Weather? {
+        guard let model = model, model.weather.count > 1 else { return nil }
+        
+        return model.weather[1]
+    }
+}
