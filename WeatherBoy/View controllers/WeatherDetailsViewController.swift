@@ -25,6 +25,8 @@ class WeatherDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = MetaWeather.allCases[cityIndex].rawValue
+        
         viewModel.delegate = self
         
         // TODO: - Show loader
