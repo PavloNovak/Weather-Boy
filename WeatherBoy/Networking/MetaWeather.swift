@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum MetaWeather: CaseIterable {
-    case gothenburg
-    case stockholm
-    case mountainView
-    case london
-    case newYork
-    case berlin
+enum MetaWeather: String, CaseIterable {
+    case gothenburg = "Gothenburg"
+    case stockholm = "Stockholm"
+    case mountainView = "Mountain View"
+    case london = "London"
+    case newYork = "New York"
+    case berlin = "Berlin"
 }
 
 extension MetaWeather: APIService {

@@ -11,6 +11,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var applicationController: ApplicationController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
@@ -29,9 +30,16 @@ extension AppDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
 
-        let viewController = ViewController()
+        let navigationController = UINavigationController()
 
-        window?.rootViewController = viewController
+        window?.rootViewController = navigationController
+        
+        configureApplicationController(with: navigationController)
+    }
+    
+    private func configureApplicationController(with navigationController: UINavigationController) {
+        applicationController = ApplicationController(with: navigationController)
+        applicationController.setup()
     }
 }
 
