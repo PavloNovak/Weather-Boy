@@ -1,0 +1,32 @@
+{
+    "consolidated_weather": [
+        {
+            "id": 6531134142808064,
+            "weather_state_name": "Light Cloud",
+            "weather_state_abbr": "lc",
+            "wind_direction_compass": "WNW",
+            "created": "2022-03-26T05:25:43.957147Z",
+            "applicable_date": "2022-03-26",
+            "min_temp": 8.19,
+            "max_temp": 21.605,
+            "the_temp": 20.48,
+            "wind_speed": 3.1735144754632945,
+            "wind_direction": 300,
+            "air_pressure": 1017,
+            "humidity": 54,
+            "visibility": 9.999726596675416,
+            "predictability": 70
+        }
+    ],
+    "time": "2022-03-26T00:16:48.696329-07:00",
+    "sun_rise": "2022-03-26T07:02:36.211117-07:00",
+    "sun_set": "2022-03-26T19:24:54.135109-07:00",
+    "timezone_name": "LMT",
+    "parent": {},
+    "sources": [],
+    "title": "Mountain View",
+    "location_type": "City",
+    "woeid": 2455920,
+    "latt_long": "37.39999,-122.079552",
+    "timezone": "America/Los_Angeles"
+}
