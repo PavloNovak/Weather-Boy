@@ -95,7 +95,7 @@ final class CityCell: UITableViewCell {
     }
     
     func setup(for cityIndex: Int) {
-        let city = MetaWeather.allCases[cityIndex]
+        let city = CityEnumeration.allCases[cityIndex]
         titleLabel.text = city.rawValue
         subtitleLabel.text = city.country()
     }

@@ -44,7 +44,7 @@ class WeatherDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
-        navigationItem.title = MetaWeather.allCases[cityIndex].rawValue
+        navigationItem.title = CityEnumeration.allCases[cityIndex].rawValue
         
         viewModel.delegate = self
         

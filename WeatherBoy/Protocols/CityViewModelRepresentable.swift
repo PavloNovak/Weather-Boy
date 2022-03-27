@@ -8,16 +8,16 @@
 import Foundation
 
 protocol CityViewModelRepresentable: AnyObject {
-    /// Return title of a city
+    /// Title of a city
     var title: String { get }
-    /// Returns array containing weather forecasts for a city
+    /// Array containing weather forecasts for a city for next five days
     var weather: [Weather] { get }
-    /// Returns local time for a city
+    /// Local time for a city
     var localTime: String { get }
-    /// Returns sunrise local time for a city
+    /// Sunrise by local time for a city
     var sunRise: String { get }
-    /// Returns sunset local time for a city
+    /// Sunset by local time for a city
     var sunSet: String { get }
-    /// Returns local timezone identifier
+    /// Local timezone identifier
     var timezone: String { get }
 }

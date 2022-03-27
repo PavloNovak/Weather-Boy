@@ -1,5 +1,5 @@
 //
-//  MetaWeather.swift
+//  CityEnumeration.swift
 //  WeatherBoy
 //
 //  Created by Pavlo Novak on 2022-03-26.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MetaWeather: String, CaseIterable {
+enum CityEnumeration: String, CaseIterable {
     case gothenburg = "Gothenburg"
     case stockholm = "Stockholm"
     case mountainView = "Mountain View"
@@ -16,7 +16,7 @@ enum MetaWeather: String, CaseIterable {
     case berlin = "Berlin"
 }
 
-extension MetaWeather: APIService {
+extension CityEnumeration: APIService {
     
     var baseURL: String {
         return "https://www.metaweather.com/api/location/"
@@ -44,7 +44,7 @@ extension MetaWeather: APIService {
     }
 }
 
-extension MetaWeather {
+extension CityEnumeration {
     func country() -> String {
         switch self {
         case .gothenburg, .stockholm:

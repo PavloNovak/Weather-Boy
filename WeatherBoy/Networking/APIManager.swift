@@ -53,6 +53,11 @@ final class APIManager {
         }.resume()
     }
     
+    /// Fetch image from API.
+    /// - Parameters:
+    ///     - api: Accepts object that conforms to APIService protocol.
+    ///     - weatherState: Current state of weather to receive corresponding image
+    ///     - completionHandler: Closure that returns a result value that represents either a success or a failure, including an associated value in each case.
     func fetchImageByURL(from api: APIService,
                          weatherState: String,
                          completionHandler: @escaping (Result<UIImage, Error>) -> Void) {

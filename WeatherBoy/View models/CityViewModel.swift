@@ -23,8 +23,10 @@ final class CityViewModel {
         self.model = model
     }
     
+    /// Fetches data from API by city index
+    /// - Parameter cityIndex: Selected city index
     public func fetchCityDataByIndex(_ cityIndex: Int) {
-        apiManager.fetchCityData(from: MetaWeather.allCases[cityIndex]) { [weak self] result in
+        apiManager.fetchCityData(from: CityEnumeration.allCases[cityIndex]) { [weak self] result in
             switch result {
             case .success(let city):
                 self?.model = city
@@ -35,6 +37,10 @@ final class CityViewModel {
         }
     }
     
+    /// Fetches image from API to represent corresponding weather
+    /// - Parameters:
+    ///   - code: Weather state code
+    ///   - completion: Closure that returns a result value that represents either a success or a failure, including an associated value in each case.
     public func fetchImageByWeatherStateCode(_ code: String, completion: @escaping ((UIImage) -> Void)) {
         apiManager.fetchImageByURL(from: MetaWeatherState.image,
                                    weatherState: code) { result in

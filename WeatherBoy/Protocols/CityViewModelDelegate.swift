@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Conform to implement handling of CityViewModel requests updates
 protocol CityViewModelDelegate: AnyObject {
 
     /// Called when receives data from the network request.

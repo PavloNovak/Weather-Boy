@@ -45,13 +45,13 @@ class CitiesViewController: UIViewController {
 
 extension CitiesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MetaWeather.allCases.count
+        return CityEnumeration.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CityCell.self),
                                                  for: indexPath) as? CityCell
-        assert(indexPath.row < MetaWeather.allCases.count,
+        assert(indexPath.row < CityEnumeration.allCases.count,
                "TableView should not have more rows than cases in MetaWeather enumeration")
         assert(cell != nil, "CityCell could not be created")
         cell?.setup(for: indexPath.row)

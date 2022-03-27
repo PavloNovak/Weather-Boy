@@ -24,7 +24,7 @@ class APIManagerTests: XCTestCase {
         let expectedResult = URL(string: "https://www.metaweather.com/api/location/2455920")
         
         // Act
-        let request = MetaWeather.mountainView.requestString
+        let request = CityEnumeration.mountainView.requestString
         let requestURL = URL(string: request)
         
         // Assert
@@ -39,7 +39,7 @@ class APIManagerTests: XCTestCase {
         let expectation = XCTestExpectation(description: "response")
         
         // Act & Assert
-        apiManager.fetchCityData(from: MetaWeather.mountainView) { result in
+        apiManager.fetchCityData(from: CityEnumeration.mountainView) { result in
             switch result {
             case .success(let city):
                 XCTAssertFalse(city.weather.isEmpty)
